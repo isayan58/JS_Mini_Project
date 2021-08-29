@@ -1,22 +1,31 @@
-function adduserrow(username)
+function adduserrow(book)
 {
-    console.log(username);
+    console.log(book);
 
     const tableEle = document.getElementsByTagName('table')[0];
     const trEle = document.createElement('tr');
     const allTds = [];
 
-    for(let key in username){
+    for(let key in book){
         const tdEle = document.createElement('td');
-        //tdEle.innerHTML = username[key];
-        const inputEle = document.createElement('input');
-        inputEle.type='text';
-        //inputEle.value= username[key];
-        inputEle.placeholder = 'Enter the data here'
-        inputEle.setAttribute("contentediable", true);
-        tdEle.innerHTML = inputEle.value;
-        allTds.push(tdEle);
+        let inpName;
+        if (key === 'name'){
+            inpName = document.createElement('input');
+            inpName.placeholder = 'Enter book name';
+            tdEle.appendChild(inpName);
+        }
+        else if(key === 'author')
+        {
+            inpName = document.createElement('input');
+            inpName.placeholder = 'Enter author name';
+            tdEle.appendChild(inpName);
+        }
+        else{
+            tdEle.innerHTML = book[key];
+        }
+        trEle.appendChild(tdEle);
     }
+     tableEle.appendChild(trEle);
 
     allTds.forEach(td=>{
         trEle.appendChild(td);

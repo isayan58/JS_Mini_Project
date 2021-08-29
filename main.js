@@ -20,6 +20,7 @@ class Store{
     constructor(list)
     {
         this.BookList=list;
+        this.lastid = list.length;
     }
     render(){
         showTable(this.BookList)
@@ -28,19 +29,19 @@ class Store{
 
 class UserAdd{
 
-    constructor(user)
+    constructor(list)
     {
-        this.username=user;
+        //this.username=user;
+        this.BookList=list;
+        this.lastid = list.length;
     }
     addrow(){
-    //console.log(this.username);
-    //adduserrow(this.username);
     let element= {};
-    element.bookid =document.getElementById("bookid").value;
-    element.name =document.getElementById("name").value;
-    element.author =document.getElementById("author").value;
+    element.bookid = ++this.lastid;
+    element.name = '';
+    element.author = '';
     element.lender =document.getElementById("lender").value;
-    element.borrower =document.getElementById("borrower").value;
+    element.borrower = '';
     adduserrow(element);
     //console.log(element);
 }
@@ -52,8 +53,7 @@ document.body.onload= function(){
     myStore.render();
 }
 async function adduser(){
-    //let username= document.getElementById('username').value;
-    const myUser = new UserAdd();
+    const myUser = new UserAdd(initBook);
     let promise = new Promise((resolve, reject) => {
         setTimeout(() => resolve("done!"), 1000)
       });
