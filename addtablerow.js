@@ -8,7 +8,12 @@ function adduserrow(username)
 
     for(let key in username){
         const tdEle = document.createElement('td');
-        tdEle.innerHTML = username[key];
+        //tdEle.innerHTML = username[key];
+        const inputEle = document.createElement('input');
+        inputEle.type='text';
+        inputEle.value= username[key];
+        inputEle.setAttribute("contentediable", true);
+        tdEle.innerHTML = inputEle.value;
         allTds.push(tdEle);
     }
 
