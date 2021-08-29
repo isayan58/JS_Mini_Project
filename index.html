@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Store
+        </title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div>
+            Library
+            <div>
+                <div id="input1">
+                    <form name="form1">
+                    <label>ID:</label> <input type="number" id="bookid" required="required">&ensp;
+                    <label>Name:</label> <input type="text" id="name" required="required">&ensp;
+                    <label>Author:</label> <input type="text" id = "author" required="required">&ensp;
+                    <label>Lender:</label> <input type="text" id="lender" required="required">&ensp;
+                    <label>Borrower:</label> <input type="text" id="borrower">&ensp;
+                    <br>
+                    <br>
+                    <input type="button" value = "Submit" id="submit" onclick="adduser()">
+                </form>
+                </div>
+            </div>
+            <div>
+                <table border="2">
+                    <tr>
+                        <th>ID</th>
+                        <th>
+                            NAME
+                        </th>
+                        <th>AUTHOR</th>
+                        <th>LENDER</th>
+                        <th>BORROWER</th>
+                    </tr>
+                </table>
+            </div>
+            <script type="text/javascript" src="main.js"></script>
+            <script type="text/javascript" src="renderTable.js"></script>
+            <script type="text/javascript" src="addtablerow.js"></script>
+        </div>
+    </body>
+</html>
