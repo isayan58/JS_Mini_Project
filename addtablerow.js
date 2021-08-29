@@ -11,7 +11,8 @@ function adduserrow(username)
         //tdEle.innerHTML = username[key];
         const inputEle = document.createElement('input');
         inputEle.type='text';
-        inputEle.value= username[key];
+        //inputEle.value= username[key];
+        inputEle.placeholder = 'Enter the data here'
         inputEle.setAttribute("contentediable", true);
         tdEle.innerHTML = inputEle.value;
         allTds.push(tdEle);
