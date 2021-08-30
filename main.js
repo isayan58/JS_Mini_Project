@@ -51,10 +51,9 @@ function addbookborrower(c)
         bookid, name, author, lender,
          borrower: user
     };
-    const tableElem = document.getElementsByTagName('table');
-    console.log(tableElem);
-    tableElem.remove();
-    showTable([bookToSave]);
+    let x = document.getElementById("table1").rows[++id].cells;
+    x[4].innerHTML = user;
+    //showTable([bookToSave]);
 }
 
 class UserAdd{
