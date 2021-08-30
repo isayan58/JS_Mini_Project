@@ -11,7 +11,7 @@ let initBook=[
         id: 2,
         name: "Pride and Prejudice",
         author: "Jane Austen",
-        lender: "Priyarna",
+        lender: "XYZ",
         borrower: null
     }
 ];
