@@ -16,6 +16,27 @@ let initBook=[
     }
 ];
 
+    // function addBook(book, trEle)
+    // {
+    //     initBook.push(book);
+    //     console.log(initBook);
+    //     //trEle.remove();
+    //     const myStoreupdated = new Store(initBook);
+    //     myStoreupdated.render();
+    // }
+
+    function addBook(book, trEleToRemove) {
+        const { bookid, name, author, lender } = book;
+        const bookToSave = {
+            bookid, name, author, lender,
+             borrower: 'Book Added'
+        };
+        trEleToRemove.remove();
+        initBook.push(bookToSave);
+        showTable([bookToSave]);
+        //userSubmitEl.disabled = false;
+    }
+
 class Store{
     constructor(list)
     {
@@ -31,7 +52,6 @@ class UserAdd{
 
     constructor(list)
     {
-        //this.username=user;
         this.BookList=list;
         this.lastid = list.length;
     }
@@ -43,7 +63,6 @@ class UserAdd{
     element.lender =document.getElementById("lender").value;
     element.borrower = '';
     adduserrow(element);
-    //console.log(element);
 }
 
 }
@@ -55,7 +74,7 @@ document.body.onload= function(){
 async function adduser(){
     const myUser = new UserAdd(initBook);
     let promise = new Promise((resolve, reject) => {
-        setTimeout(() => resolve("done!"), 1000)
+        setTimeout(() => resolve("done!"), 100)
       });
   
       let result = await promise; // wait until the promise resolves
