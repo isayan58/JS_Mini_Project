@@ -1,6 +1,7 @@
 function showTable(listOfBooks){
     const tableEle = document.getElementsByTagName('table')[0];
-
+    let tableElem;
+    console.log(listOfBooks);
     listOfBooks.forEach(book => {
         const trEle = document.createElement('tr');
         const allTds = [];
@@ -12,6 +13,13 @@ function showTable(listOfBooks){
                 const borrowbtn = document.createElement('button');
                 borrowbtn.innerHTML = 'Borrow';
                 tdEle.appendChild(borrowbtn);
+                borrowbtn.addEventListener('click', () =>
+                {
+                    let tdpar=borrowbtn.parentNode;
+                    let trpar=tdpar.parentNode;
+                    var c=trpar.innerText;
+                    this.addbookborrower(c[0]);
+                });
             }
                 allTds.push(tdEle);
             

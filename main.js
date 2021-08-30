@@ -1,6 +1,6 @@
 let initBook=[
     {
-        id: 1,
+        bookid: 1,
         name: "Harry Potter",
         author: "J. K. Rowling",
         lender: "Sayan",
@@ -8,22 +8,14 @@ let initBook=[
     }
     ,
     {
-        id: 2,
+        bookid: 2,
         name: "Pride and Prejudice",
         author: "Jane Austen",
-        lender: "XYZ",
+        lender: "Priyarna",
         borrower: null
     }
 ];
 
-    // function addBook(book, trEle)
-    // {
-    //     initBook.push(book);
-    //     console.log(initBook);
-    //     //trEle.remove();
-    //     const myStoreupdated = new Store(initBook);
-    //     myStoreupdated.render();
-    // }
 
     function addBook(book, trEleToRemove) {
         const { bookid, name, author, lender } = book;
@@ -47,6 +39,22 @@ class Store{
     render(){
         showTable(this.BookList)
     }
+}
+
+function addbookborrower(c)
+{
+    let id=parseInt(c);
+    id--;
+    let user = this.bookBorrower(initBook, id);
+    const { bookid, name, author, lender } = initBook[id];
+    const bookToSave = {
+        bookid, name, author, lender,
+         borrower: user
+    };
+    const tableElem = document.getElementsByTagName('table');
+    console.log(tableElem);
+    tableElem.remove();
+    showTable([bookToSave]);
 }
 
 class UserAdd{
