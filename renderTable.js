@@ -7,7 +7,14 @@ function showTable(listOfBooks){
         for(let key in book){
             const tdEle = document.createElement('td');
             tdEle.innerHTML = book[key];
-            allTds.push(tdEle);
+            if(key === 'borrower' && book[key] === null)
+            {
+                const borrowbtn = document.createElement('button');
+                borrowbtn.innerHTML = 'Borrow';
+                tdEle.appendChild(borrowbtn);
+            }
+                allTds.push(tdEle);
+            
         }        
 
         allTds.forEach(td=>{

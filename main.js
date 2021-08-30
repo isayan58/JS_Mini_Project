@@ -4,7 +4,7 @@ let initBook=[
         name: "Harry Potter",
         author: "J. K. Rowling",
         lender: "Sayan",
-        borrower: "Satan"
+        borrower: "Charles"
     }
     ,
     {
@@ -29,10 +29,11 @@ let initBook=[
         const { bookid, name, author, lender } = book;
         const bookToSave = {
             bookid, name, author, lender,
-             borrower: 'Book Added'
+             borrower: null
         };
         trEleToRemove.remove();
         initBook.push(bookToSave);
+        console.log(initBook);
         showTable([bookToSave]);
         //userSubmitEl.disabled = false;
     }

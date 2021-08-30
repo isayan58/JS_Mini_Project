@@ -1,4 +1,4 @@
-#input1{
+#input1, body{
     font-family: cursive;
     background-color: beige;
     padding: 15px;
@@ -6,4 +6,19 @@
 
 table{
     width: 100%;
+    background-color: cornsilk;
+}
+
+#header{
+    text-align: center;
+    background-color: azure;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 800;
+    padding:20px;
+}
+
+thead{
+    background-color: blanchedalmond;
+    padding:10%
 }
